@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby_dig_and_collect (0.0.1)
+    hash_dig_and_collect (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -35,10 +35,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.7)
+  hash_dig_and_collect!
   pry
   pry-nav
   rspec
-  ruby_dig_and_collect!
 
 BUNDLED WITH
    1.13.6
