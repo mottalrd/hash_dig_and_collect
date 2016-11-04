@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hash_dig_and_collect/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruby_dig_and_collect"
+  spec.name          = "hash_dig_and_collect"
   spec.version       = HashDigAndCollect::VERSION
   spec.authors       = ["Alfredo Motta"]
   spec.summary       = %q{Utility method build on top of Ruby dig to navigate hashes mixed up with arrays.}
