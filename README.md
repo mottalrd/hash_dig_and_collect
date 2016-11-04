@@ -1,4 +1,20 @@
-# Ruby Hash#dig_and_collect
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'hash_dig_and_collect'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install hash_dig_and_collect
+
+## Usage
 
 The introduction of the Hash#dig  method in Ruby 2.3 completely changed the way I navigate deeply nested hashes. 
 
@@ -6,7 +22,7 @@ Inspired by Hash#dig this repo contains an implementation of Hash#dig_and_collec
 
 See the details of the why in this [Blog post](http://www.alfredo.motta.name/making-ruby-hashdig-even-more-awesome-introducing-hashdig_and_collect).
 
-It is really handy when you want to handle Hashes like:
+The typical usage is for these type of scenarios:
 
 ```
 client_with_many_addresses = {
@@ -41,8 +57,16 @@ client_with_many_addresses = {
 }
 ```
 
-by writing 
+where you can then write:
 
 ```
 client_with_many_addresses.dig_and_collect(:addresses, :location, :latitude)
 ```
+
+## Contributing
+
+1. Fork it ( https://github.com/mottalrd/hash_dig_and_collect/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
