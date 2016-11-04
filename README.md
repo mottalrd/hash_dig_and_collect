@@ -20,7 +20,6 @@ Hash#dig  in Ruby 2.3 completely changed the way I navigate deeply nested hashes
 Hash#dig_and_collect, a new utility method to navigate even more complex nested hashes without messing up your code. 
 
 See the details of the why in this [Blog post](http://www.alfredo.motta.name/making-ruby-hashdig-even-more-awesome-introducing-hashdig_and_collect).
-The typical usage is for these type of scenarios:
 
 ```
 client_with_many_addresses = {
@@ -53,12 +52,9 @@ client_with_many_addresses = {
     }
   ]
 }
-```
 
-where you can then write:
-
-```
 client_with_many_addresses.dig_and_collect(:addresses, :location, :latitude)
+# 51.5013673
 ```
 
 ## Contributing
