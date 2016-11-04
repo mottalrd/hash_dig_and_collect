@@ -1,5 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'pry'
-gem 'pry-nav'
-gem 'rspec'
+# Specify your gem's dependencies in ruby_dig.gemspec
+gemspec

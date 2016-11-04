@@ -1,7 +1,7 @@
 require 'spec_helper'
-require_relative '../lib/hash'
+require_relative '../lib/hash_dig_and_collect'
 
-RSpec.describe Hash do
+RSpec.describe HashDigAndCollect do
   describe '#dig_and_collect' do
     context 'when key is present' do
       let(:values) { [nil, '', []] }

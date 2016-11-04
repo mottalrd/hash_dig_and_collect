@@ -1,5 +1,10 @@
+PATH
+  remote: .
+  specs:
+    ruby_dig_and_collect (0.0.1)
+
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     coderay (1.1.1)
     diff-lcs (1.2.5)
@@ -29,9 +34,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (~> 1.7)
   pry
   pry-nav
   rspec
+  ruby_dig_and_collect!
 
 BUNDLED WITH
    1.13.6

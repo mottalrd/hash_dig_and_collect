@@ -1,4 +1,4 @@
-class Hash
+module HashDigAndCollect
   def dig_and_collect *keys
     keys = keys.dup
 
@@ -16,4 +16,8 @@ class Hash
       result.concat inner
     end
   end
+end
+
+class Hash
+  include HashDigAndCollect
 end
