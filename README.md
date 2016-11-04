@@ -54,7 +54,7 @@ client_with_many_addresses = {
 }
 
 client_with_many_addresses.dig_and_collect(:addresses, :location, :latitude)
-# 51.5013673
+# [51.504382, 51.5013673]
 ```
 
 ## Contributing
