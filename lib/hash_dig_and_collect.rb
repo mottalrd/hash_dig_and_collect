@@ -1,21 +1,21 @@
 module HashDigAndCollect
-  def dig_and_collect(next_key, *keys)
-    return [] unless self.has_key? next_key
+  def self.call(hash, next_key, *keys)
+    return [] unless hash.has_key? next_key
 
-    next_val = self[next_key]
+    next_val = hash[next_key]
     return [next_val] if keys.empty?
 
     case next_val
     when Hash
-      next_val.dig_and_collect(*keys)
+      HashDigAndCollect.call(next_val, *keys)
     when Array
-      next_val.flat_map { |v| v.dig_and_collect(*keys) }
+      next_val.flat_map { |v| HashDigAndCollect.call(v, *keys) }
     else
       []
     end
   end
-end
 
-class Hash
-  include HashDigAndCollect
+  def dig_and_collect(next_key, *keys)
+    HashDigAndCollect.call(self, next_key, *keys)
+  end
 end

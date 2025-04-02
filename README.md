@@ -16,6 +16,43 @@ Or install it yourself as:
 
 ## Usage
 
+```
+require 'hash_dig_and_collect/core_ext'
+
+test_hash = {
+  a: [
+    {
+      b: {
+        c: [
+          { d: { e: 'ok' } },
+          { d: { e: 'ok' } }
+        ]
+      }
+    },
+    {
+      b: {
+        c: [
+          { d: { e: 'ok' } },
+          { d: { e: 'ok' } }
+        ]
+      }
+    }
+  ]
+}
+
+test_hash.dig_and_collect(:a, :b, :c, :d, :e)
+# => ['ok', 'ok', 'ok', 'ok']
+```
+
+or if you don't want to monkey patch
+
+```
+DigAndCollect.call(test_hash, :a, :b, :c, :d, :e)
+# => ['ok', 'ok', 'ok', 'ok']
+```
+
+## Rationale
+
 Hash#dig  in Ruby 2.3 completely changed the way I navigate deeply nested hashes. This repo contains an implementation of 
 Hash#dig_and_collect, a new utility method to navigate even more complex nested hashes without messing up your code. 
 

@@ -1,8 +1,20 @@
 require 'spec_helper'
-require_relative '../lib/hash_dig_and_collect'
+require_relative '../lib/hash_dig_and_collect/core_ext'
 
 RSpec.describe HashDigAndCollect do
   describe '#dig_and_collect' do
+    context 'when called directly from the module' do
+      subject do
+        {
+          a: { b: { c: 'ok' } }
+        }
+      end
+
+      it 'collects the values' do
+        expect(HashDigAndCollect.call(subject, :a, :b, :c)).to eq(['ok'])
+      end
+    end
+
     context 'when key is present' do
       let(:values) { [nil, '', []] }
 
